@@ -1,0 +1,9 @@
+{
+    "/employees/list": "/employees",
+    "/employees/get/:id": "/employees/:id",
+    "/Domain/list": "/Domain",
+    "/Domain/get/:id": "/Domain/:id",
+    "/Domain/list/:id/PlanCareEndGoalSummary1": "/Domain/:id/PlanCareEndGoalSummary1",
+    "/Domain/list/:id/PlanCareEndGoalSummary2": "/Domain/:id/PlanCareEndGoalSummary2",
+    "/Domain/list/:id/PlanCareEndGoalSummary3": "/Domain/:id/PlanCareEndGoalSummary3"
+  }

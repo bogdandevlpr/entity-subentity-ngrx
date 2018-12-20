@@ -1,0 +1,81 @@
+{
+  "User": {
+    "id": 1,
+    "name": "John Doe"
+  },
+  "Domains": [
+    {
+      "id": 1,
+      "name": "Domain1"
+    },
+    {
+      "id": 2,
+      "name": "Domain2"
+    }
+  ],
+  "DomainDetail": [
+    {
+      "id": 1,
+      "name": "DomainDetail1"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "Domain": [
+    {
+      "id": 1,
+      "name": "Domain1"
+    },
+    {
+      "id": 2,
+      "name": "Domain2"
+    },
+    {
+      "id": 3,
+      "name": "Domain3"
+    }
+  ],
+  "PlanCareEndGoalSummary1": [
+    { "id": 1, "name": "Endgoal1-1" },
+    { "id": 2, "name": "Endgoal1-2" },
+    { "id": 3, "name": "Endgoal1-3" }
+  ],
+  "PlanCareEndGoalSummary2": [
+    { "id": 11, "name": "Endgoal2-1" },
+    { "id": 22, "name": "Endgoal2-2" },
+    { "id": 33, "name": "Endgoal2-3" }
+  ],
+  "PlanCareEndGoalSummary3": [
+    { "id": 111, "name": "Endgoal3-1" },
+    { "id": 222, "name": "Endgoal3-2" },
+    { "id": 333, "name": "Endgoal3-3" }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "employees": [
+    {
+      "id": 1,
+      "name": "Pankaj",
+      "salary": "10000"
+    },
+    {
+      "name": "David",
+      "salary": "5000",
+      "id": 2
+    }
+  ]
+
+}

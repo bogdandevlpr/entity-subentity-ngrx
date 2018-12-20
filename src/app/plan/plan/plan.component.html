@@ -1,0 +1,9 @@
+Domains List:
+<div *ngFor="let domain of domains$ | async">
+  <div (click)="loadDetail(domain?.id)" style="height: 40px; width: 400px; border: 1px solid black; margin: 10px;">
+    {{domain?.name}}
+  </div>
+  <div>
+    <app-detail [entityName]="'domain' + domain?.id" [domainID]="domain?.id"></app-detail>
+  </div>
+</div>
