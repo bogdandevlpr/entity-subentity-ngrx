@@ -41,9 +41,9 @@
     }
   ],
   "PlanCareEndGoalSummary1": [
-    { "id": 1, "name": "Endgoal1-1" },
-    { "id": 2, "name": "Endgoal1-2" },
-    { "id": 3, "name": "Endgoal1-3" }
+    { "id": "d1", "name": "Endgoal1-1" },
+    { "id": "d2", "name": "Endgoal1-2" },
+    { "id": "d3", "name": "Endgoal1-3" }
   ],
   "PlanCareEndGoalSummary2": [
     { "id": 11, "name": "Endgoal2-1" },
