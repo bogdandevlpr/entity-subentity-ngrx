@@ -16,15 +16,16 @@ export const getDomainLoading = createSelector(
   fromApproachSection.getDomainLoading
 );
 
-// export const getPlanCareEndGoalState = createSelector(
-//   fromFeature.getPlanState,
-//   (state: fromFeature.PlanState) => state.domain1
-// );
-// export const getPlanCareEndGoal = createSelector(
-//   getPlanCareEndGoalState,
-//   fromApproachSection.getPlanCareEndGoal
-// );
-// export const getPlanCareEndGoalLoading = createSelector(
-//   getPlanCareEndGoalState,
-//   fromApproachSection.getPlanCareEndGoalLoading
-// );
+export const getPlanCareEndGoalState = createSelector(
+  fromFeature.getPlanState,
+  (state: fromFeature.PlanState) => state.details
+);
+
+export const getPlanCareEndGoalById = () => {
+  return createSelector(
+    getPlanCareEndGoalState,
+    (entities, props: {id}) => entities[props.id],
+  );
+};
+
+

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1e7196;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="KI_school_work_free_time" transform="translate(398 607)">
+    <circle id="Ellipse_68" data-name="Ellipse 68" class="cls-1" cx="15" cy="15" r="15" transform="translate(-398 -607)"/>
+    <path id="Path_106" data-name="Path 106" class="cls-2" d="M10,9h6v4a2.006,2.006,0,0,1-2,2H2a2.006,2.006,0,0,1-2-2V9H6v3h4ZM9,11V9H7v2H9Zm7-7V8H0V4A2.006,2.006,0,0,1,2,2H4L5,0h6l1,2h2A2.006,2.006,0,0,1,16,4ZM10,1H6V2h4Z" transform="translate(-391 -599)"/>
+  </g>
+</svg>

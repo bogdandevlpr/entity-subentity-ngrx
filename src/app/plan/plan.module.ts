@@ -1,3 +1,4 @@
+import { reducerProvider, reducerToken, metaReducers } from './store/reducers/index';
 import { ApproachSectionServiceApi } from './services/approach-section.service';
 import { PlanRoutingModule } from './plan.routing';
 import { NgModule } from '@angular/core';
@@ -8,24 +9,83 @@ import { EffectsModule } from '@ngrx/effects';
 import { effects
 } from './store';
 import { DetailComponent } from './detail/detail.component';
-
-import * as fromApproachSection from './store/reducers/approach-section.reducers';
-
+import { SubDetailComponent } from './sub-detail/sub-detail.component';
+import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule
+} from '@angular/material';
 @NgModule({
   imports: [
     CommonModule,
     PlanRoutingModule,
-    StoreModule.forFeature('plan', {
-      domain: fromApproachSection.reducerDomain,
-      domain1: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain1'),
-      domain2: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain2'),
-      domain3: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain3')
-    }),
+    StoreModule.forFeature('plan', reducerToken, {metaReducers}),
     EffectsModule.forFeature(effects),
+    MatAutocompleteModule,
+    MatButtonModule,
+    MatButtonToggleModule,
+    MatCardModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatListModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
+    MatRadioModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatSnackBarModule,
+    MatSortModule,
+    MatStepperModule,
+    MatTableModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatTooltipModule
   ],
   providers: [
-    // reducerProvider,
+    reducerProvider,
     ApproachSectionServiceApi],
-  declarations: [PlanComponent, DetailComponent],
+  declarations: [PlanComponent, DetailComponent, SubDetailComponent],
 })
 export class PlanModule { }

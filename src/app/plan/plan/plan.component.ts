@@ -1,10 +1,11 @@
 // import { DomainState, PlanCareEndGoalState } from './../store/reducers/approach-section.reducers';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromStore from '../store';
 import { map, tap, filter } from 'rxjs/operators';
 import { Observable, Subscription } from 'rxjs';
 import * as fromActions from '../store/actions';
+import { MatAccordion } from '@angular/material/expansion';
 
 @Component({
   selector: 'app-plan',
@@ -16,8 +17,8 @@ export class PlanComponent implements OnInit {
   endGoals$: Subscription;
   domains: any;
   endGoals: any;
-  selectedDomainID;
 
+  @ViewChild('matAccordion') matAccordion: MatAccordion;
 
   constructor(private store: Store<fromStore.PlanState>) {
     this.store.dispatch(new fromActions.LoadDomain());
@@ -27,9 +28,8 @@ export class PlanComponent implements OnInit {
     this.domains$ = this.store.pipe(select(fromStore.getDomain), map((res) => res.data));
   }
 
-  loadDetail(domainID) {
-    // this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ domainID: domainID }));
-    this.selectedDomainID = domainID;
+  isVisibleFn(index: number, item) {
+    return item.id;
   }
 
 }

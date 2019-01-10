@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 // core
 import { AuthService } from './auth.service';
 // rxjs
-import { Observable, throwError as observableThrowError } from 'rxjs';
+import { Observable, throwError as observableThrowError ,  from } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { from } from 'rxjs';
 
 @Injectable()
 export class UserService {

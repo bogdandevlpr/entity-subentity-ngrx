@@ -13,7 +13,8 @@ export class AuthService {
 
   AuthPut(url: string, data: any): Promise<Object> {
     const body = JSON.stringify(data);
-    return this.http.put(url, body).toPromise().then((res) => res);
+    const headers = {'Content-Type': 'application/json'};
+    return this.http.put(url, body, { headers: headers }).toPromise().then((res) => res);
   }
 
   AuthDelete(url: string): Promise<Object> {
@@ -22,7 +23,8 @@ export class AuthService {
 
   AuthPost(url: string, data: any): Promise<Object> {
     const body = JSON.stringify(data);
-    return this.http.post(url, body).toPromise().then((res) => res);
+    const headers = {'Content-Type': 'application/json'};
+    return this.http.post(url, body, { headers: headers }).toPromise().then((res) => res);
   }
 
 }

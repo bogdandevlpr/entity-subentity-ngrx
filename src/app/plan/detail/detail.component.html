@@ -1,4 +1,13 @@
-<p>
-  detail works!
-</p>
-123: {{endGoals$ | async }}
+<div>Last refresh: {{lastRefresh}}</div>
+<div style="position: absolute" [hidden]="!isLoading">Loading</div>
+<button style="margin-top: 40px;" (click)="createEndGoal()">Create New EndGoal</button>
+<div *ngFor="let item of endGoals$ | async; let index = index">
+  <span>{{item?.name}}</span>
+  <span>
+    <button (click)="updateEndGoal(item.id)">Update EndGoal</button>
+    <button (click)="deleteEndGoal(item.id)">Delete EndGoal</button>
+  </span>
+  <div style="margin-left: 30px;">
+    <app-sub-detail [domainID]="domainID" [endGoal]="item" [careGoals]="item?.careGoals"></app-sub-detail>
+  </div>
+</div>

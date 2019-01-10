@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 38 38">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #1e7196;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.319" y1="0.257" x2="0.762" y2="0.648" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#8bc53f" stop-opacity="0"/>
+      <stop offset="1" stop-color="#8bc53f"/>
+    </linearGradient>
+  </defs>
+  <g id="KI_inProgress_social_skills" transform="translate(402 481)">
+    <g id="KI_social_skills">
+      <circle id="Ellipse_68" data-name="Ellipse 68" class="cls-1" cx="15" cy="15" r="15" transform="translate(-398 -477)"/>
+      <path id="Path_109" data-name="Path 109" class="cls-2" d="M3.9,14h0a2.006,2.006,0,0,1-2-2h0a2.006,2.006,0,0,1,2-2h0a2.006,2.006,0,0,1,2,2h0A2.006,2.006,0,0,1,3.9,14Zm3.8,4a3.99,3.99,0,0,0-3.9-3A3.875,3.875,0,0,0,0,18ZM10.9,2h0a2.006,2.006,0,0,0-2-2h0a2.006,2.006,0,0,0-2,2h0a2.006,2.006,0,0,0,2,2h0A2.006,2.006,0,0,0,10.9,2Zm1.8,6A3.99,3.99,0,0,0,8.8,5,3.875,3.875,0,0,0,5,8Zm3.2,4h0a2.006,2.006,0,0,0-2-2h0a2.006,2.006,0,0,0-2,2h0a2.006,2.006,0,0,0,2,2h0A2.006,2.006,0,0,0,15.9,12Zm1.8,6a3.99,3.99,0,0,0-3.9-3,4.079,4.079,0,0,0-3.9,3Z" transform="translate(-392 -471)"/>
+    </g>
+    <path id="Path_715" data-name="Path 715" class="cls-3" d="M19,2A16.986,16.986,0,0,0,2,19H0A18.992,18.992,0,0,1,19,0h0a19,19,0,0,1,0,38V36A17,17,0,0,0,19,2" transform="translate(-402 -481)"/>
+  </g>
+</svg>

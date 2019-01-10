@@ -52,6 +52,128 @@ export class ResetPlanCareEndGoal implements Action {
   readonly type = RESET_PLAN_CARE_END_GOAL;
 }
 
+export const CREATE_PLAN_CARE_END_GOAL = 'CREATE_PLAN_CARE_END_GOAL';
+export const CREATE_PLAN_CARE_END_GOAL_FAIL = 'CREATE_PLAN_CARE_END_GOAL_FAIL';
+export const CREATE_PLAN_CARE_END_GOAL_SUCCESS = 'CREATE_PLAN_CARE_END_GOAL_SUCCESS';
+
+
+export class CreatePlanCareEndGoal implements Action {
+  readonly type = CREATE_PLAN_CARE_END_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class CreatePlanCareEndGoalFail implements Action {
+  readonly type = CREATE_PLAN_CARE_END_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class CreatePlanCareEndGoalSuccess implements Action {
+  readonly type = CREATE_PLAN_CARE_END_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
+export const UPDATE_PLAN_CARE_END_GOAL = 'UPDATE_PLAN_CARE_END_GOAL';
+export const UPDATE_PLAN_CARE_END_GOAL_FAIL = 'UPDATE_PLAN_CARE_END_GOAL_FAIL';
+export const UPDATE_PLAN_CARE_END_GOAL_SUCCESS = 'UPDATE_PLAN_CARE_END_GOAL_SUCCESS';
+
+export class UpdatePlanCareEndGoal implements Action {
+  readonly type = UPDATE_PLAN_CARE_END_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class UpdatePlanCareEndGoalFail implements Action {
+  readonly type = UPDATE_PLAN_CARE_END_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class UpdatePlanCareEndGoalSuccess implements Action {
+  readonly type = UPDATE_PLAN_CARE_END_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
+export const DELETE_PLAN_CARE_END_GOAL = 'DELETE_PLAN_CARE_END_GOAL';
+export const DELETE_PLAN_CARE_END_GOAL_FAIL = 'DELETE_PLAN_CARE_END_GOAL_FAIL';
+export const DELETE_PLAN_CARE_END_GOAL_SUCCESS = 'DELETE_PLAN_CARE_END_GOAL_SUCCESS';
+
+export class DeletePlanCareEndGoal implements Action {
+  readonly type = DELETE_PLAN_CARE_END_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class DeletePlanCareEndGoalFail implements Action {
+  readonly type = DELETE_PLAN_CARE_END_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class DeletePlanCareEndGoalSuccess implements Action {
+  readonly type = DELETE_PLAN_CARE_END_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
+export const CREATE_PLAN_CARE_GOAL = 'CREATE_PLAN_CARE_GOAL';
+export const CREATE_PLAN_CARE_GOAL_FAIL = 'CREATE_PLAN_CARE_GOAL_FAIL';
+export const CREATE_PLAN_CARE_GOAL_SUCCESS = 'CREATE_PLAN_CARE_GOAL_SUCCESS';
+
+
+export class CreatePlanCareGoal implements Action {
+  readonly type = CREATE_PLAN_CARE_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class CreatePlanCareGoalFail implements Action {
+  readonly type = CREATE_PLAN_CARE_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class CreatePlanCareGoalSuccess implements Action {
+  readonly type = CREATE_PLAN_CARE_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
+export const UPDATE_PLAN_CARE_GOAL = 'UPDATE_PLAN_CARE_GOAL';
+export const UPDATE_PLAN_CARE_GOAL_FAIL = 'UPDATE_PLAN_CARE_GOAL_FAIL';
+export const UPDATE_PLAN_CARE_GOAL_SUCCESS = 'UPDATE_PLAN_CARE_GOAL_SUCCESS';
+
+export class UpdatePlanCareGoal implements Action {
+  readonly type = UPDATE_PLAN_CARE_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class UpdatePlanCareGoalFail implements Action {
+  readonly type = UPDATE_PLAN_CARE_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class UpdatePlanCareGoalSuccess implements Action {
+  readonly type = UPDATE_PLAN_CARE_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
+export const DELETE_PLAN_CARE_GOAL = 'DELETE_PLAN_CARE_GOAL';
+export const DELETE_PLAN_CARE_GOAL_FAIL = 'DELETE_PLAN_CARE_GOAL_FAIL';
+export const DELETE_PLAN_CARE_GOAL_SUCCESS = 'DELETE_PLAN_CARE_GOAL_SUCCESS';
+
+export class DeletePlanCareGoal implements Action {
+  readonly type = DELETE_PLAN_CARE_GOAL;
+  constructor(public payload: any) { }
+}
+
+export class DeletePlanCareGoalFail implements Action {
+  readonly type = DELETE_PLAN_CARE_GOAL_FAIL;
+  constructor(public payload: any) { }
+}
+
+export class DeletePlanCareGoalSuccess implements Action {
+  readonly type = DELETE_PLAN_CARE_GOAL_SUCCESS;
+  constructor(public payload: any) {
+  }
+}
+
 export type ApproachSectionActions =
   | LoadDomain
   | LoadDomainFail
@@ -61,4 +183,28 @@ export type ApproachSectionActions =
   | LoadPlanCareEndGoal
   | LoadPlanCareEndGoalFail
   | LoadPlanCareEndGoalSuccess
-  | ResetPlanCareEndGoal;
+  | ResetPlanCareEndGoal
+
+  | CreatePlanCareEndGoal
+  | CreatePlanCareEndGoalFail
+  | CreatePlanCareEndGoalSuccess
+
+  | UpdatePlanCareEndGoal
+  | UpdatePlanCareEndGoalFail
+  | UpdatePlanCareEndGoalSuccess
+
+  | DeletePlanCareEndGoal
+  | DeletePlanCareEndGoalFail
+  | DeletePlanCareEndGoalSuccess
+
+  | CreatePlanCareGoal
+  | CreatePlanCareGoalFail
+  | CreatePlanCareGoalSuccess
+
+  | UpdatePlanCareGoal
+  | UpdatePlanCareGoalFail
+  | UpdatePlanCareGoalSuccess
+
+  | DeletePlanCareGoal
+  | DeletePlanCareGoalFail
+  | DeletePlanCareGoalSuccess;

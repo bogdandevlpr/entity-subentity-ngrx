@@ -1,29 +1,36 @@
 import { InjectionToken } from '@angular/core';
 import { ActionReducerMap, createFeatureSelector } from '@ngrx/store';
 import * as fromApproachSection from './approach-section.reducers';
+import { storeFreeze } from 'ngrx-store-freeze';
+
+export interface Goal {
+  id: number;
+  careGoalName: string;
+}
+
+export interface EndGoal {
+  id: number;
+  name: string;
+  careGoals: Goal;
+}
 
 export interface PlanState {
   domain: any;
-  domain1: any;
-  domain2: any;
-  domain3: any;
+  details: {
+    [id: string]: {
+      [id: string]: EndGoal
+    }
+  };
 }
 
-// export function getReducers(): ActionReducerMap<PlanState> {
-//   return {
-//     domain: fromApproachSection.reducerDomain,
-//     domain1: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain1'),
-//     domain2: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain2'),
-//     domain3: fromApproachSection.mainReducer('PLAN_CARE_END_GOAL', 'domain3')
-//   };
-// }
+export function getReducers(): ActionReducerMap<PlanState> {
+  return {
+    domain: fromApproachSection.reducerDomain,
+    details: fromApproachSection.reducerSubEntities
+  };
+}
 
-export const getPlanState = createFeatureSelector<PlanState>(
-  'plan'
-);
-
-// export const reducerToken = new InjectionToken<ActionReducerMap<PlanState>>('PlanReducers');
-
-// export const reducerProvider = [
-//   { provide: reducerToken, useFactory: getReducers }
-// ];
+export const getPlanState = createFeatureSelector<PlanState>('plan');
+export const metaReducers = [storeFreeze];
+export const reducerToken = new InjectionToken<ActionReducerMap<PlanState>>('PlanReducers');
+export const reducerProvider = [{ provide: reducerToken, useFactory: getReducers }];

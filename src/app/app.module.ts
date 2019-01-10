@@ -11,7 +11,7 @@ import { effects, reducerProvider, reducerToken, metaReducers } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,8 @@ import { MainComponent } from './main/main.component';
     HttpClientModule,
     StoreModule.forRoot(reducerToken),
     EffectsModule.forRoot(effects),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    BrowserAnimationsModule
   ],
   providers: [reducerProvider, UserService, AuthService],
   bootstrap: [AppComponent]
