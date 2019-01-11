@@ -45,8 +45,12 @@
   ],
   "PlanCareEndGoalSummary1": [
     {
-      "name": "somename-updated",
+      "name": "somename1",
       "id": 1
+    },
+    {
+      "name": "somename2",
+      "id": 2
     }
   ],
   "PlanCareGoalSummary1": [
@@ -173,6 +177,30 @@
     {
       "careGoalName": "careGoal-updated",
       "id": 35
+    },
+    {
+      "careGoalName": "careGoal-updated",
+      "id": 39
+    },
+    {
+      "careGoalName": "somename",
+      "id": 40
+    },
+    {
+      "careGoalName": "somename",
+      "id": 41
+    },
+    {
+      "careGoalName": "somename",
+      "id": 44
+    },
+    {
+      "careGoalName": "somename",
+      "id": 46
+    },
+    {
+      "careGoalName": "careGoal-updated",
+      "id": 47
     }
   ],
   "PlanCareGoalSummary2": [
@@ -215,23 +243,76 @@
     {
       "careGoalName": "careGoal-updated",
       "id": 10
-    }
-  ],
-  "PlanCareGoalSummary3": [],
-  "PlanCareEndGoalSummary2": [
-    {
-      "name": "somename2",
-      "id": 32430
     },
     {
-      "name": "somename1",
-      "id": 32431
+      "careGoalName": "somename",
+      "id": 11
+    },
+    {
+      "careGoalName": "somename",
+      "id": 13
+    },
+    {
+      "careGoalName": "careGoal-updated",
+      "id": 14
+    }
+  ],
+  "PlanCareGoalSummary3": [
+    {
+      "careGoalName": "somename",
+      "id": 1
+    },
+    {
+      "careGoalName": "somename",
+      "id": 2
+    },
+    {
+      "careGoalName": "somename",
+      "id": 3
+    },
+    {
+      "careGoalName": "somename",
+      "id": 4
+    },
+    {
+      "careGoalName": "somename",
+      "id": 5
+    },
+    {
+      "careGoalName": "somename",
+      "id": 7
+    },
+    {
+      "careGoalName": "somename",
+      "id": 10
+    }
+  ],
+  "PlanCareEndGoalSummary2": [
+    {
+      "name": "somename4",
+      "id": 1
+    },
+    {
+      "name": "somename5",
+      "id": 2
+    },
+    {
+      "name": "somename-updated",
+      "id": 3
+    },
+    {
+      "name": "somename7",
+      "id": 4
     }
   ],
   "PlanCareEndGoalSummary3": [
     {
-      "name": "somename1",
-      "id": 12773
+      "name": "somename9",
+      "id": 1
+    },
+    {
+      "name": "somename12",
+      "id": 4
     }
   ],
   "comments": [

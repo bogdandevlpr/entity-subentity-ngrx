@@ -59,7 +59,7 @@ export const getDomain = (state: DomainState) => state;
 export const getDomainLoading = (state: DomainState) => state.loading;
 
 export function stateReducer(
-  state = {},
+  state = {allIds: {}},
   action: any,
 ) {
   switch (action.type) {
@@ -70,7 +70,8 @@ export function stateReducer(
           items: [],
           loaded: false,
           loading: true
-        }
+        },
+        allIds: {...state.allIds}
       };
       return loading;
     }
@@ -78,16 +79,17 @@ export function stateReducer(
     case fromApproachSection.LOAD_PLAN_CARE_END_GOAL_SUCCESS: {
       const endGoals = action.payload.planCareEndGoal;
       const entities = getNormalizedList(endGoals);
+      const selectedEndGoal = action.payload.id;
       const loaded = {
         ...state,
         [action.payload.id]: {
           items: entities,
           loaded: true,
           loading: false
-        }
+        },
+        allIds: {...state.allIds, [action.payload.id]: action.payload.id}
       };
-
-      return loaded;
+      return {...loaded, selectedEndGoal: selectedEndGoal};
     }
     case fromApproachSection.CREATE_PLAN_CARE_END_GOAL: {
       const oldEndGoalsList = state[action.payload.id].items;

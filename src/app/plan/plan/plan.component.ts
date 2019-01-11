@@ -14,9 +14,9 @@ import { MatAccordion } from '@angular/material/expansion';
 })
 export class PlanComponent implements OnInit {
   domains$: Observable<any>;
-  endGoals$: Subscription;
-  domains: any;
-  endGoals: any;
+  domains;
+  allIds$: Subscription;
+  loadedDomains: any;
 
   @ViewChild('matAccordion') matAccordion: MatAccordion;
 
@@ -25,11 +25,28 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.domains$ = this.store.pipe(select(fromStore.getDomain), map((res) => res.data));
+    this.domains$ = this.store.pipe(select(fromStore.getDomain), map((res) => { this.domains = res.data; return this.domains; }));
+    this.allIds$ = this.store.pipe(select(fromStore.getAllIds)).subscribe((ids) => this.loadedDomains = Object.keys(ids).map(e => +e));
   }
 
   isVisibleFn(index: number, item) {
     return item.id;
+  }
+
+  loadPlanCareEndGoals(id) {
+    const loaded = this.loadedDomains.some(did => did === id);
+    if (!loaded) {
+      this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ id: id }));
+    }
+  }
+
+  expand() {
+    this.matAccordion.openAll();
+    this.domains.forEach(domain => this.loadPlanCareEndGoals(domain.id));
+  }
+
+  collapse() {
+    this.matAccordion.closeAll();
   }
 
 }

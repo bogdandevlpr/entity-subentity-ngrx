@@ -1,16 +1,16 @@
 Domains List:
-<button (click)="matAccordion.openAll();">Expand all</button>
-<button (click)="matAccordion.closeAll();">Collapse all</button>
+<button (click)="expand()">Expand all</button>
+<button (click)="collapse()">Collapse all</button>
 <mat-accordion #matAccordion="matAccordion" [multi]="true">
   <div *ngFor="let domain of domains$ | async; let index = index; trackBy: isVisibleFn">
     <mat-expansion-panel #panel>
-      <mat-expansion-panel-header>
+      <mat-expansion-panel-header (click)="loadPlanCareEndGoals(domain.id)">
         <img class="icon" [src]="('/assets/icons/domain_' + domain.code + '.svg')">
         {{domain?.name}}
       </mat-expansion-panel-header>
-      <ng-template matExpansionPanelContent>
+      <!-- <ng-template matExpansionPanelContent> -->
         <app-detail [domainID]="domain?.id"></app-detail>
-      </ng-template>
+      <!-- </ng-template> -->
     </mat-expansion-panel>
   </div>
 </mat-accordion>

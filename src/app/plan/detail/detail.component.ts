@@ -14,6 +14,7 @@ import * as fromActions from '../store/actions';
 export class DetailComponent implements OnInit {
   @Input() domainID;
   endGoals$: Observable<any>;
+  endGoalsLoaded$: Subscription;
   isLoading: boolean;
   increment = 0;
   incrementCare = 0;
@@ -22,15 +23,15 @@ export class DetailComponent implements OnInit {
   ngOnInit() {
     this.endGoals$ = this.store.pipe(
       select(fromStore.getPlanCareEndGoalById(), { id: this.domainID }),
-      tap(e => this.isLoading = e.loading),
-      filter(e => e.loaded),
+      tap(e => this.isLoading = e && e.loading),
+      filter(e => e && e.loaded),
       map(e => {
         console.log('list', e);
         return this.denormalizePlanCareEndGoals(e.items);
       })
     );
 
-    this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ id: this.domainID }));
+    // this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ id: this.domainID }));
   }
 
   createEndGoal() {
@@ -62,8 +63,8 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  get lastRefresh(): string {
-    return Date.now().toString();
-  }
+  // get lastRefresh(): string {
+  //   return Date.now().toString();
+  // }
 
 }

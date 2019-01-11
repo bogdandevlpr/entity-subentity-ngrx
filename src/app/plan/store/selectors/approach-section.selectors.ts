@@ -21,10 +21,22 @@ export const getPlanCareEndGoalState = createSelector(
   (state: fromFeature.PlanState) => state.details
 );
 
+export const getSelectedEndGoal = createSelector(
+  getPlanCareEndGoalState,
+  (state) => state.selectedEndGoal
+);
+
+export const getAllIds = createSelector(
+  getPlanCareEndGoalState,
+  (state) => state.allIds
+);
+
 export const getPlanCareEndGoalById = () => {
   return createSelector(
     getPlanCareEndGoalState,
-    (entities, props: {id}) => entities[props.id],
+    (entities, props: {id}) => {
+      return entities[props.id];
+    }
   );
 };
 

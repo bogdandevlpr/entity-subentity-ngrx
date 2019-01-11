@@ -18,7 +18,7 @@ export interface PlanState {
   domain: any;
   details: {
     [id: string]: {
-      [id: string]: EndGoal
+      [id: string]: EndGoal,
     }
   };
 }
