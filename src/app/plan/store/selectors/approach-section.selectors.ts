@@ -7,10 +7,6 @@ export const getDomainState = createSelector(
   fromFeature.getPlanState,
   (state: fromFeature.PlanState) => state.domain
 );
-export const getDomain = createSelector(
-  getDomainState,
-  fromApproachSection.getDomain
-);
 export const getDomainLoading = createSelector(
   getDomainState,
   fromApproachSection.getDomainLoading
@@ -21,6 +17,15 @@ export const getPlanCareEndGoalState = createSelector(
   (state: fromFeature.PlanState) => state.details
 );
 
+export const getDomain = createSelector(
+  getDomainState,
+  (state) => {
+    if (state && state.data) {
+      return Object.keys(state.data).map(s => state.data[s]);
+    }
+  }
+);
+
 export const getSelectedEndGoal = createSelector(
   getPlanCareEndGoalState,
   (state) => state.selectedEndGoal
@@ -28,7 +33,7 @@ export const getSelectedEndGoal = createSelector(
 
 export const getAllIds = createSelector(
   getPlanCareEndGoalState,
-  (state) => state.allIds
+  (state) => Object.keys(state.allIds).map(id => +id)
 );
 
 export const getPlanCareEndGoalById = () => {
@@ -37,6 +42,13 @@ export const getPlanCareEndGoalById = () => {
     (entities, props: {id}) => {
       return entities[props.id];
     }
+  );
+};
+
+export const getPlanCareEndGoalsLoading = () => {
+  return createSelector(
+    getPlanCareEndGoalState,
+    (entities, props: {id}) => entities[props.id] ? entities[props.id].loading : undefined
   );
 };
 

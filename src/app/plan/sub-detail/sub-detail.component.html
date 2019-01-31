@@ -1,9 +1,11 @@
-{{lastRefresh}}
-<button (click)="createCareGoal()">Create New CareGoal</button>
+<button (click)="create()">Create</button>
 <div *ngFor="let careGoal of careGoals">
   <span>{{careGoal?.careGoalName}}</span>
   <span>
-    <button (click)="updateCareGoal(careGoal?.id)">Update CareGoal</button>
-    <button (click)="deleteCareGoal(careGoal?.id)">Delete CareGoal</button>
+    <button (click)="update(careGoal?.id)">Update</button>
+    <button (click)="delete(careGoal?.id)">Delete</button>
   </span>  
+</div>
+<div *ngIf="!careGoals || !careGoals.length">
+  Status: There are no caregoals for this domain.
 </div>

@@ -25,15 +25,16 @@ export class PlanComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.domains$ = this.store.pipe(select(fromStore.getDomain), map((res) => { this.domains = res.data; return this.domains; }));
-    this.allIds$ = this.store.pipe(select(fromStore.getAllIds)).subscribe((ids) => this.loadedDomains = Object.keys(ids).map(e => +e));
+    this.domains$ = this.store.pipe(select(fromStore.getDomain), map((res) => { this.domains = res; return this.domains; }));
+    this.allIds$ = this.store.pipe(select(fromStore.getAllIds)).subscribe((ids) => this.loadedDomains = ids);
   }
 
-  isVisibleFn(index: number, item) {
+  domainFn(index: number, item) {
     return item.id;
   }
 
-  loadPlanCareEndGoals(id) {
+  loadPlanCareEndGoals(id, endGoalID?) {
+    this.store.dispatch(new fromActions.LoadPlanCareGoal({ id: endGoalID }));
     const loaded = this.loadedDomains.some(did => did === id);
     if (!loaded) {
       this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ id: id }));

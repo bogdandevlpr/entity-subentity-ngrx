@@ -1,5 +1,4 @@
 import * as fromApproachSection from '../actions/approach-section.actions';
-
 export interface DomainState {
   data: any[];
   loaded: boolean;
@@ -25,11 +24,21 @@ export function reducerDomain(state = initialStateDomain, action: fromApproachSe
 
     case fromApproachSection.LOAD_DOMAIN_SUCCESS: {
       const data = action.payload;
+      const entities = data.reduce(
+        (d, domain) => {
+          return {
+            ...d,
+            [domain.id]: {
+              ...domain
+            },
+          };
+        }, {}
+      );
       return {
         ...state,
         loading: false,
         loaded: true,
-        data: data
+        data: entities
       };
     }
 
@@ -220,6 +229,7 @@ export function stateReducer(
       return loaded;
     }
 
+    case fromApproachSection.DELETE_PLAN_CARE_GOAL:
     case fromApproachSection.UPDATE_PLAN_CARE_GOAL: {
       const endGoals = state[action.payload.id].items;
       const endGoal = state[action.payload.id].items[action.payload.endGoalID];
@@ -273,37 +283,9 @@ export function stateReducer(
       return loaded;
     }
 
-    case fromApproachSection.DELETE_PLAN_CARE_GOAL: {
-      const endGoals = state[action.payload.id].items;
-      const endGoal = state[action.payload.id].items[action.payload.endGoalID];
-      const goals = state[action.payload.id].items[action.payload.endGoalID].careGoals;
-      const goal = state[action.payload.id].items[action.payload.endGoalID].careGoals[action.payload.careGoalID];
-      const r = 1;
-      const loading = {
-        ...state,
-        [action.payload.id]: {
-          items: { ...endGoals, [action.payload.endGoalID]: {
-            ...endGoal,
-            careGoals: {
-              ...goals,
-              [action.payload.careGoalID]: {
-                ...goal
-              }
-            }
-          }
-        },
-          loaded: false,
-          loading: true
-        }
-      };
-      return loading;
-    }
-
     case fromApproachSection.DELETE_PLAN_CARE_GOAL_SUCCESS: {
       const endGoals = state[action.payload.id].items;
       const endGoal = state[action.payload.id].items[action.payload.endGoalID];
-      console.log('action.payload', action.payload);
-      console.log('goals', state);
       const goals = state[action.payload.id].items[action.payload.endGoalID].careGoals;
       const { [action.payload.careGoalID]: removed, ...newCareGoals } = goals;
       const loaded = {

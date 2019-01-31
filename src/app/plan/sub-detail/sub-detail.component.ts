@@ -14,13 +14,11 @@ export class SubDetailComponent implements OnInit {
   @Input() domainID;
   @Input() careGoals;
   @Input() endGoal;
-  endGoals$: Observable<any>;
-  isLoading: boolean;
   constructor(private store: Store<fromStore.PlanState>) { }
 
   ngOnInit() {}
 
-  createCareGoal() {
+  create() {
     this.store.dispatch(
       new fromActions.CreatePlanCareGoal(
         {
@@ -32,7 +30,7 @@ export class SubDetailComponent implements OnInit {
     );
   }
 
-  updateCareGoal(careGoalID) {
+  update(careGoalID) {
     this.store.dispatch(
       new fromActions.UpdatePlanCareGoal(
         {id: this.domainID, endGoalID: this.endGoal.id, careGoalID: careGoalID, body: {'careGoalName': 'careGoal-updated'}
@@ -40,16 +38,12 @@ export class SubDetailComponent implements OnInit {
     );
   }
 
-  deleteCareGoal(careGoalID) {
+  delete(careGoalID) {
     this.store.dispatch(
       new fromActions.DeletePlanCareGoal(
         {id: this.domainID, endGoalID: this.endGoal.id, careGoalID: careGoalID}
       )
     );
-  }
-
-  get lastRefresh(): string {
-    return Date.now().toString();
   }
 
 }
