@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.0.
 This project shows how to:
 
-- normalize complex a state tree
+- normalize complex state tree
 
 - select pieces of state with parameterized selectors
 
