@@ -113,33 +113,6 @@ export class DeletePlanCareEndGoalSuccess implements Action {
   }
 }
 
-
-export const LOAD_PLAN_CARE_GOAL = 'LOAD_PLAN_CARE_GOAL';
-export const LOAD_PLAN_CARE_GOAL_FAIL = 'LOAD_PLAN_CARE_GOAL_FAIL';
-export const LOAD_PLAN_CARE_GOAL_SUCCESS = 'LOAD_PLAN_CARE_GOAL_SUCCESS';
-export const RESET_PLAN_CARE_GOAL = 'RESET_PLAN_CARE_GOAL';
-
-
-export class LoadPlanCareGoal implements Action {
-  readonly type = LOAD_PLAN_CARE_GOAL;
-  constructor(public payload: any) { }
-}
-
-export class LoadPlanCareGoalFail implements Action {
-  readonly type = LOAD_PLAN_CARE_GOAL_FAIL;
-  constructor(public payload: any) { }
-}
-
-export class LoadPlanCareGoalSuccess implements Action {
-  readonly type = LOAD_PLAN_CARE_GOAL_SUCCESS;
-  constructor(public payload: any) {
-  }
-}
-
-export class ResetPlanCareGoal implements Action {
-  readonly type = RESET_PLAN_CARE_GOAL;
-}
-
 export const CREATE_PLAN_CARE_GOAL = 'CREATE_PLAN_CARE_GOAL';
 export const CREATE_PLAN_CARE_GOAL_FAIL = 'CREATE_PLAN_CARE_GOAL_FAIL';
 export const CREATE_PLAN_CARE_GOAL_SUCCESS = 'CREATE_PLAN_CARE_GOAL_SUCCESS';
@@ -223,11 +196,6 @@ export type ApproachSectionActions =
   | DeletePlanCareEndGoal
   | DeletePlanCareEndGoalFail
   | DeletePlanCareEndGoalSuccess
-
-  | LoadPlanCareGoal
-  | LoadPlanCareGoalFail
-  | LoadPlanCareGoalSuccess
-  | ResetPlanCareGoal
 
   | CreatePlanCareGoal
   | CreatePlanCareGoalFail

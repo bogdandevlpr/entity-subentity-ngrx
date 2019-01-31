@@ -33,8 +33,7 @@ export class PlanComponent implements OnInit {
     return item.id;
   }
 
-  loadPlanCareEndGoals(id, endGoalID?) {
-    this.store.dispatch(new fromActions.LoadPlanCareGoal({ id: endGoalID }));
+  loadPlanCareEndGoals(id) {
     const loaded = this.loadedDomains.some(did => did === id);
     if (!loaded) {
       this.store.dispatch(new fromActions.LoadPlanCareEndGoal({ id: id }));

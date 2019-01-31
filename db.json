@@ -43,7 +43,20 @@
       "code": 333
     }
   ],
-  "PlanCareEndGoalSummary1": [],
+  "PlanCareEndGoalSummary1": [
+    {
+      "name": "somename",
+      "id": 1
+    },
+    {
+      "name": "somename-updated",
+      "id": 2
+    },
+    {
+      "name": "somename",
+      "id": 3
+    }
+  ],
   "PlanCareGoalSummary1": [
     {
       "careGoalName": "careGoal-updated",
@@ -414,6 +427,14 @@
     {
       "careGoalName": "somename",
       "id": 40
+    },
+    {
+      "careGoalName": "careGoal-updated",
+      "id": 41
+    },
+    {
+      "careGoalName": "somename",
+      "id": 42
     }
   ],
   "PlanCareGoalSummary3": [
@@ -466,7 +487,16 @@
       "id": 19
     }
   ],
-  "PlanCareEndGoalSummary2": [],
+  "PlanCareEndGoalSummary2": [
+    {
+      "name": "somename",
+      "id": 1
+    },
+    {
+      "name": "somename",
+      "id": 3
+    }
+  ],
   "PlanCareEndGoalSummary3": [],
   "comments": [
     {
