@@ -1,18 +1,26 @@
 <div>Last refresh: {{lastRefresh}}</div>
-<div style="position: absolute" *ngIf="endGoalsLoading$ | async">Loading</div>
-<button style="margin-top: 40px;" (click)="create()">Create</button>
-<div *ngFor="let item of endGoals$ | async; let index = index; trackBy: endGoalFn">
-  <span>{{item?.name}}</span>
-  <span>
-    <button (click)="update(item.id)">Update</button>
-    <button (click)="delete(item.id)">Delete</button>
-  </span>
-  <div style="margin-left: 30px;">
-    <app-sub-detail [domainID]="domainID" [endGoal]="item" [careGoals]="item?.careGoals"></app-sub-detail>
-  </div>
+<div style="height: 20px;">
+  <div *ngIf="endGoalsLoading$ | async">Loading</div>
 </div>
-<div *ngIf="endGoals$ | async as endGoals">
-  <div *ngIf="!endGoals || !endGoals.length">
-    Status: There are no endgoals for this domain.
+
+<div class="endgoals-container">
+  <button (click)="create()">Create</button>
+  <div class="endgoals">Endgoals:</div>
+  <ul *ngFor="let item of endGoals$ | async; let index = index; trackBy: endGoalFn">
+    <li>
+      <span>{{item?.name}}</span>
+      <span>
+        <button (click)="update(item.id)">Update</button>
+        <button (click)="delete(item.id)">Delete</button>
+      </span>
+      <div style="margin-left: 30px;">
+        <app-sub-detail [domainID]="domainID" [endGoal]="item" [careGoals]="item?.careGoals"></app-sub-detail>
+      </div>
+    </li>
+  </ul>
+  <div *ngIf="endGoals$ | async as endGoals">
+    <div *ngIf="!endGoals || !endGoals.length">
+      Status: There are no endgoals for this domain.
+    </div>
   </div>
 </div>

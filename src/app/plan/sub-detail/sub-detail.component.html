@@ -1,11 +1,16 @@
-<button (click)="create()">Create</button>
-<div *ngFor="let careGoal of careGoals">
-  <span>{{careGoal?.careGoalName}}</span>
-  <span>
-    <button (click)="update(careGoal?.id)">Update</button>
-    <button (click)="delete(careGoal?.id)">Delete</button>
-  </span>  
-</div>
-<div *ngIf="!careGoals || !careGoals.length">
-  Status: There are no caregoals for this domain.
+<div class="caregoals-container">
+  <div class="caregoals">Caregoals:</div>
+  <button (click)="create()">Create</button>
+  <ul *ngFor="let careGoal of careGoals">
+    <li>
+      <span>{{careGoal?.careGoalName}}</span>
+      <span>
+        <button (click)="update(careGoal?.id)">Update</button>
+        <button (click)="delete(careGoal?.id)">Delete</button>
+      </span>  
+    </li>
+  </ul>
+  <div *ngIf="!careGoals || !careGoals.length">
+    Status: There are no caregoals for this domain.
+  </div>
 </div>

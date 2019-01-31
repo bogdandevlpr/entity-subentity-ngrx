@@ -100,6 +100,7 @@ export function stateReducer(
       };
       return {...loaded, selectedEndGoal: selectedEndGoal};
     }
+
     case fromApproachSection.CREATE_PLAN_CARE_END_GOAL: {
       const oldEndGoalsList = state[action.payload.id].items;
       const loading = {

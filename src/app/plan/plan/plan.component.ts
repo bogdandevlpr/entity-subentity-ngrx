@@ -1,5 +1,5 @@
 // import { DomainState, PlanCareEndGoalState } from './../store/reducers/approach-section.reducers';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import * as fromStore from '../store';
 import { map, tap, filter } from 'rxjs/operators';
@@ -12,9 +12,9 @@ import { MatAccordion } from '@angular/material/expansion';
   templateUrl: './plan.component.html',
   styleUrls: ['./plan.component.css']
 })
-export class PlanComponent implements OnInit {
+export class PlanComponent implements OnInit, OnDestroy {
   domains$: Observable<any>;
-  domains;
+  domains: any;
   allIds$: Subscription;
   loadedDomains: any;
 
@@ -47,6 +47,10 @@ export class PlanComponent implements OnInit {
 
   collapse() {
     this.matAccordion.closeAll();
+  }
+
+  ngOnDestroy() {
+    this.allIds$.unsubscribe();
   }
 
 }
