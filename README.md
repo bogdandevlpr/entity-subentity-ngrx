@@ -24,6 +24,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Next stepts:
 - flatten the state in order to reduce the complexity of the reducers
-- use ngrx/Entity
+- implement facades
 - implement reset actions
 - implement unit tests
